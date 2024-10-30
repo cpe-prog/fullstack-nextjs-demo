@@ -1,6 +1,10 @@
 /* eslint-disable @next/next/no-img-element */
 import LOGO from "@/assets/images/logo.png";
 import Image from "next/image";
+import MenuBar from "./menubar";
+import { ModeToggle } from "./mode";
+import ProfileInfo from "./profileInfo";
+import { Button } from "./ui/button";
 
 export default function NavBar() {
 	return (
@@ -11,10 +15,12 @@ export default function NavBar() {
 					<h1>FoodHub</h1>
 				</div>
 				<div>
-					<h1>logo</h1>
+					<MenuBar />
 				</div>
-				<div>
-					<h1>logo</h1>
+				<div className="flex gap-4 items-center">
+					<Button>Get Started</Button>
+					<ProfileInfo />
+					<ModeToggle />
 				</div>
 			</nav>
 		</div>
