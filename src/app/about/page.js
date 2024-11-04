@@ -1,7 +1,7 @@
-export default function Dashboard() {
+export default function About() {
 	return (
 		<div className="h-screen justify-center w-full flex items-center">
-			Dashboard
+			About
 		</div>
 	);
 }
