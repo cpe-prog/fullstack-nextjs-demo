@@ -1,34 +1,27 @@
 /* eslint-disable @next/next/no-img-element */
 import LOGO from "@/assets/images/logo.png";
 import Image from "next/image";
+import Link from "next/link";
+import { DashboardIcon, Humburger, InventoryIcon, ItemsIcon } from "./icons";
 import { ModeToggle } from "./mode";
 import ProfileInfo from "./profileInfo";
+import { Button } from "./ui/button";
 import { Input } from "./ui/input";
 
 export default function NavBar() {
+	const position = "flex justify-center";
+	const inActive =
+		"p-0 m-0 w-32 flex justify-start rounded-md bg-foreground text-background";
 	return (
-		<div className="w-full h-20 backdrop-blur-md fixed shadow-lg">
+		<div className="w-full h-20 w- backdrop-blur-md border-b-2 border-slate-700 fixed shadow-lg">
 			<nav className="h-20 px-8 flex justify-between items-center">
 				<div className="flex gap-2 items-center">
-					<Image src={LOGO} width={55} height={55} alt="logo" />
-					<h1>FoodHub</h1>
+					<Link className="flex gap-2 items-center" href={"/"}>
+						<Image src={LOGO} width={55} height={55} alt="logo" />
+						<h1>FoodHub</h1>
+					</Link>
 					<div className="ml-8">
-						<svg
-							xmlns="http://www.w3.org/2000/svg"
-							width="24"
-							height="24"
-							viewBox="0 0 24 24"
-							fill="none"
-							stroke="currentColor"
-							stroke-width="2"
-							stroke-linecap="round"
-							stroke-linejoin="round"
-							class="lucide lucide-menu"
-						>
-							<line x1="4" x2="20" y1="12" y2="12" />
-							<line x1="4" x2="20" y1="6" y2="6" />
-							<line x1="4" x2="20" y1="18" y2="18" />
-						</svg>
+						<Humburger />
 					</div>
 				</div>
 				<div>
@@ -39,7 +32,40 @@ export default function NavBar() {
 					<ModeToggle />
 				</div>
 			</nav>
-			<aside className=" shadow-lg w-56 h-screen">Hello</aside>
+			<aside className="border-r-2 border-slate-700 shadow-lg w-56 h-screen">
+				<div className="grid grid-cols-1 w-full">
+					<div className={`mt-10 ${position}`}>
+						<Button variant="outline" className={inActive}>
+							<Link className="p-2 text-start" href={"/dashboard"}>
+								<div className="flex gap-2">
+									<DashboardIcon />
+									Dashboard
+								</div>
+							</Link>
+						</Button>
+					</div>
+					<div className={`${position} mt-4`}>
+						<Button variant="outline" className={inActive}>
+							<Link className="p-2 text-start" href={"/items"}>
+								<div className="flex gap-2">
+									<ItemsIcon />
+									Items
+								</div>
+							</Link>
+						</Button>
+					</div>
+					<div className={`${position} mt-4`}>
+						<Button variant="outline" className={inActive}>
+							<Link className="p-2 text-start" href={"/inventory"}>
+								<div className="flex gap-2">
+									<InventoryIcon />
+									Inventory
+								</div>
+							</Link>
+						</Button>
+					</div>
+				</div>
+			</aside>
 		</div>
 	);
 }

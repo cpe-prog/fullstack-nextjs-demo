@@ -1,7 +1,7 @@
-export default function Contact() {
+export default function Inventory() {
 	return (
 		<div className="h-screen justify-center w-full flex items-center">
-			Contact
+			Inventory
 		</div>
 	);
 }
