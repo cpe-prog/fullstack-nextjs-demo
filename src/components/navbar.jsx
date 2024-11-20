@@ -57,7 +57,7 @@ export default function NavBar() {
 								href={"/dashboard"}
 							>
 								<DashboardIcon />
-								{isClick ? "" : "Dashboard"}
+								{isClick ? "" : "Home"}
 							</Link>
 						</Button>
 					</div>
@@ -65,10 +65,10 @@ export default function NavBar() {
 						<Button className={isClick ? "" : inActive}>
 							<Link
 								className="flex gap-2 items-center text-start"
-								href={"/items"}
+								href={"/dashboard/products"}
 							>
 								<ItemsIcon />
-								{isClick ? "" : "Items"}
+								{isClick ? "" : "Products"}
 							</Link>
 						</Button>
 					</div>
@@ -76,10 +76,10 @@ export default function NavBar() {
 						<Button className={isClick ? "" : inActive}>
 							<Link
 								className="flex gap-2 items-center text-start"
-								href={"/inventory"}
+								href={"/dashboard/items"}
 							>
 								<InventoryIcon />
-								{isClick ? "" : "Inventory"}
+								{isClick ? "" : "Items"}
 							</Link>
 						</Button>
 					</div>
